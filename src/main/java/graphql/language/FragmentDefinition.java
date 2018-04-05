@@ -123,4 +123,9 @@ public class FragmentDefinition extends AbstractNode<FragmentDefinition> impleme
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor nodeVisitor) {
         return nodeVisitor.visitFragmentDefinition(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitFragmentDefinition(this, context);
+    }
 }

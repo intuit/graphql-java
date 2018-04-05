@@ -143,6 +143,33 @@ class ValuesResolverTest extends Specification {
         values['arg'] == 'hello'
     }
 
+    def "getArgumentValues: bogus input"() {
+        given:
+        def variables = [input: 'hello']
+        def fieldArgument = new GraphQLArgument("arg", GraphQLString)
+        def argument = new Argument("arg", new VariableReference("var"))
+
+        when:
+        def values = resolver.getArgumentValues([fieldArgument], [argument], variables)
+
+        then:
+        values['arg'] == null // expected thrown(GraphQLException)
+    }
+
+
+    def "getArgumentValues: one input bogus"() {
+        given:
+        def variables = [input: 'hello', var: 'world']
+        def fieldArgument = new GraphQLArgument("arg", GraphQLString)
+        def argument = new Argument("arg", new VariableReference("var"))
+
+        when:
+        def values = resolver.getArgumentValues([fieldArgument], [argument], variables)
+
+        then:
+        values['arg'] == 'world' // expected error somewhere
+    }
+
     def "getArgumentValues: resolves object literal"() {
         given: "schema defining input object"
         def subObjectType = newInputObject()

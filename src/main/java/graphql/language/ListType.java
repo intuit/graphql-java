@@ -57,4 +57,9 @@ public class ListType extends AbstractNode<ListType> implements Type<ListType> {
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitListType(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitListType(this, context);
+    }
 }

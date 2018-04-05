@@ -87,4 +87,9 @@ public class FragmentSpread extends AbstractNode<FragmentSpread> implements Sele
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitFragmentSpread(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitFragmentSpread(this, context);
+    }
 }

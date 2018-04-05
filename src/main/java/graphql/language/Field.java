@@ -151,4 +151,9 @@ public class Field extends AbstractNode<Field> implements Selection<Field> {
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitField(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitField(this, context);
+    }
 }

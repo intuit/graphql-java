@@ -60,4 +60,9 @@ public class ObjectField extends AbstractNode<ObjectField> {
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitObjectField(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitObjectField(this, context);
+    }
 }

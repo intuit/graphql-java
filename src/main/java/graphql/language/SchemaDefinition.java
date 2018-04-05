@@ -75,4 +75,9 @@ public class SchemaDefinition extends AbstractNode<SchemaDefinition> implements 
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitSchemaDefinition(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitSchemaDefinition(this, context);
+    }
 }

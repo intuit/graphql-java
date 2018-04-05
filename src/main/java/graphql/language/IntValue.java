@@ -56,4 +56,9 @@ public class IntValue extends AbstractNode<IntValue> implements Value<IntValue> 
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitIntValue(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitIntValue(this, context);
+    }
 }

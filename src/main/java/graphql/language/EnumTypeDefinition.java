@@ -98,4 +98,9 @@ public class EnumTypeDefinition extends AbstractNode<EnumTypeDefinition> impleme
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitEnumTypeDefinition(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitEnumTypeDefinition(this, context);
+    }
 }

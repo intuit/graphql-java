@@ -94,4 +94,9 @@ public class InterfaceTypeDefinition extends AbstractNode<InterfaceTypeDefinitio
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitInterfaceTypeDefinition(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitInterfaceTypeDefinition(this, context);
+    }
 }

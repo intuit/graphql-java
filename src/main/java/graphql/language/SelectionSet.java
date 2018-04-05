@@ -56,4 +56,9 @@ public class SelectionSet extends AbstractNode<SelectionSet> {
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitSelectionSet(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitSelectionSet(this, context);
+    }
 }

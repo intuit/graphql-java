@@ -58,4 +58,6 @@ public interface Node<T extends Node> {
      * Note! Visitor's operation might return special results to control traversal process.
      */
     TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor);
+
+    <IN,OUT> OUT accept(IN context, CommonNodeVisitor<IN,OUT> visitor);
 }

@@ -56,4 +56,9 @@ public class StringValue extends AbstractNode<StringValue> implements Value<Stri
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitStringValue(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitStringValue(this, context);
+    }
 }

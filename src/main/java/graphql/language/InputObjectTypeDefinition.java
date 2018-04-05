@@ -94,4 +94,9 @@ public class InputObjectTypeDefinition extends AbstractNode<InputObjectTypeDefin
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitInputObjectTypeDefinition(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitInputObjectTypeDefinition(this, context);
+    }
 }

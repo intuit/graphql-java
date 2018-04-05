@@ -142,4 +142,9 @@ public class OperationDefinition extends AbstractNode<OperationDefinition> imple
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitOperationDefinition(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitOperationDefinition(this, context);
+    }
 }

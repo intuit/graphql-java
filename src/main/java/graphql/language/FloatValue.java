@@ -57,4 +57,9 @@ public class FloatValue extends AbstractNode<FloatValue> implements Value<FloatV
     public TraversalControl accept(TraverserContext<Node> context, NodeVisitor visitor) {
         return visitor.visitFloatValue(this, context);
     }
+
+    @Override
+    public <IN, OUT> OUT accept(IN context, CommonNodeVisitor<IN, OUT> visitor) {
+        return visitor.visitFloatValue(this, context);
+    }
 }
