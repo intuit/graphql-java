@@ -19,6 +19,7 @@ therefore we avoid adding any new dependency.
 - graphql-java has a strict focus on executing a GraphQL request, this means JSON parsing, http communication, databases
 access etc is out of scope.
 
+- Added new changes to support new features
 
 If you have any question please consider asking in our spectrum chat https://spectrum.chat/graphql-java. For bug reports or specific code related topics create a new issue.
 
